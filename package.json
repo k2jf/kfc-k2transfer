@@ -1,12 +1,25 @@
 {
-  "name": "kfc-vue-templates",
-  "version": "0.1.0",
-  "private": true,
+  "name": "kfc-k2transfer",
+  "version": "1.0.0",
+  "description": "基于iview Transfer的增强版穿梭框组件",
+    "keywords": [
+      "transfer",
+      "iview",
+      "vue.js",
+      "component",
+      "ui",
+      "k2data"
+    ],
+  "main":"src/components/K2Transfer/index.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/k2jf/kfc-k2transfer"
   },
   "husky": {
     "hooks": {
@@ -20,7 +33,6 @@
     ]
   },
   "dependencies": {
-    "dayjs": "^1.8.8",
     "iview": "^3.2.2",
     "vue": "^2.6.6",
     "vue-router": "^3.0.1",

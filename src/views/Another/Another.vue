@@ -1,27 +1,42 @@
 <template>
   <div class="transfer-demo">
     <K2Transfer
-      :data="data1"
-      :style="{width: '660px', margin: '0 auto'}"
+      :data="data3"
+      filterable
+      :style="{width: '702px', margin: '0 auto'}"
       :list-style="{height: '400px', width: '300px'}"
-      :target-keys="targetKeys1"
-      :render-format="render1"
-      @on-change="handleChange1"
-      @on-dblclick="handleChange1" />
+      :target-keys="targetKeys3"
+      :render-format="render3"
+      :titles="['未选字段', '已选字段']"
+      :operations="['去除','选取']"
+      @on-change="handleChange3"
+      @on-dblclick="handleChange3">
+      <div :style="{float: 'right', margin: '5px'}">
+        <Button size="small" @click="reloadMockData">
+          刷新
+        </Button>
+      </div>
+    </K2Transfer>
   </div>
 </template>
 <script>
 import K2Transfer from '@/components/K2Transfer'
+import { Button } from 'iview'
 
 export default {
   name: 'Another',
   components: {
-    K2Transfer
+    K2Transfer,
+    Button
   },
   data () {
     return {
-      data1: this.getMockData(),
-      targetKeys1: this.getTargetKeys()
+      data3: this.getMockData(),
+      targetKeys3: this.getTargetKeys(),
+      listStyle: {
+        width: '250px',
+        height: '300px'
+      }
     }
   },
   methods: {
@@ -38,14 +53,18 @@ export default {
     },
     getTargetKeys () {
       return this.getMockData()
-        .filter((d, i) => i >= 46)
+        .filter((d, i) => i > 46)
         .map(item => item.key)
     },
-    render1 (item) {
-      return item.label
+    handleChange3 (newTargetKeys) {
+      this.targetKeys3 = newTargetKeys
     },
-    handleChange1 (newTargetKeys, direction, moveKeys) {
-      this.targetKeys1 = newTargetKeys
+    render3 (item) {
+      return '我是' + item.label
+    },
+    reloadMockData () {
+      this.data3 = this.getMockData()
+      this.targetKeys3 = this.getTargetKeys()
     }
   }
 }
