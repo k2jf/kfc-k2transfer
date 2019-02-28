@@ -49,13 +49,13 @@
 
 <script>
 export default {
-	name: 'HelloWorld',
-	props: {
-		msg: {
-			type: String,
-			required: true
-		}
-	}
+  name: 'HelloWorld',
+  props: {
+    msg: {
+      type: String,
+      required: true
+    }
+  }
 }
 </script>
 

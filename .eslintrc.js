@@ -13,8 +13,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     // 'quotes' not works on vue template
     'quotes': ['error', 'single'],
-    'no-tabs': 'off',
-    'indent': ['error', 'tab'],
+    'indent': ['error', 2],
     // ------------------------------------------------------------------------------
     // vue: need to override
     // ------------------------------------------------------------------------------
