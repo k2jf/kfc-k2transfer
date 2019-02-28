@@ -150,6 +150,9 @@ export default {
     multiSelect (item) {
       let begin = this.data.findIndex(d => d.key === this.lastCheckedKey)
       let end = this.data.findIndex(d => d.key === item.key)
+      if (begin > end) {
+        [begin, end] = [end, begin]
+      }
       const multiSelectedKeys = this.data.slice(begin + 1, end + 1).map(d => d.key)
       const newCheckedKeys = [...this.checkedKeys]
       for (let i = 0, len = multiSelectedKeys.length; i < len; i++) {
