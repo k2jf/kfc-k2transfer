@@ -175,6 +175,7 @@ export default {
       const keys = status
         ? this.filterData.filter(data => !data.disabled || this.checkedKeys.indexOf(data.key) > -1).map(data => data.key)
         : this.filterData.filter(data => data.disabled && this.checkedKeys.indexOf(data.key) > -1).map(data => data.key)
+      this.lastCheckedKey = ''
       this.$emit('on-checked-keys-change', keys)
     },
     handleQueryClear () {
