@@ -148,12 +148,12 @@ export default {
       this.$parent.handleCheckedKeys()
     },
     multiSelect (item) {
-      let begin = this.data.findIndex(d => d.key === this.lastCheckedKey)
-      let end = this.data.findIndex(d => d.key === item.key)
+      let begin = this.filterData.findIndex(d => d.key === this.lastCheckedKey)
+      let end = this.filterData.findIndex(d => d.key === item.key)
       if (begin > end) {
         [begin, end] = [end, begin]
       }
-      const multiSelectedKeys = this.data.slice(begin + 1, end + 1).map(d => d.key)
+      const multiSelectedKeys = this.filterData.slice(begin + 1, end + 1).map(d => d.key)
       const newCheckedKeys = [...this.checkedKeys]
       for (let i = 0, len = multiSelectedKeys.length; i < len; i++) {
         if (!this.checkedKeys.includes(multiSelectedKeys[i])) {
