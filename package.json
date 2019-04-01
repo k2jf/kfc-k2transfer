@@ -1,6 +1,6 @@
 {
   "name": "kfc-k2transfer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "基于iview Transfer的增强版穿梭框组件",
     "keywords": [
       "transfer",
